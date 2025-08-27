@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion de l'eau et protection de la nature</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/section2.css') }}" />
+</head>
+<body style="margin: 0; padding: 0; height: 100%; width: 100%;">
+    <!-- Page d'accueil -->
+    <div class="home-page" id="home-page">
+        <div class="card">
+            <h2>Gestion de l'eau et<br />protection de la nature</h2>
+            <div class="illustration">
+                <img src="{{ url_for('static', filename='images/ul.png') }}" alt="Protection de la nature" />
+            </div>
+            <button class="btn" onclick="startQuizPage()">Commencer</button>
+        </div>
+    </div>
+
+    <!-- Page du quiz -->
+    <div class="quiz-page" id="quiz-page" style="display: none;">
+        <div class="container">
+            <div class="header">
+                <button class="back-btn" onclick="goBackToHome()">‹</button>
+                <div class="level-indicator">Niveau 1</div>
+                <style>
+                    body { font-family: 'Poppins', sans-serif; }
+                </style>
+            </div>
+            <div class="main-content">
+                <div class="sea-decoration">
+                    <div class="seaweed" style="left: 10%; height: 150px;"></div>
+                    <div class="seaweed" style="left: 30%; height: 120px;"></div>
+                    <div class="seaweed" style="left: 50%; height: 180px;"></div>
+                    <div class="seaweed" style="left: 70%; height: 130px;"></div>
+                    <div class="seaweed" style="left: 90%; height: 160px;"></div>
+                </div>
+                <div class="question-container">
+                    <div class="question-cloud">
+                        <div class="question-number" id="question-number">1</div>
+                        <h2 id="question">Quelle est la capitale de la France ?</h2>
+                    </div>
+                    <div class="answers-container" id="answers"></div>
+                    <button id="validate-btn" class="validate-btn" onclick="validateAnswer()" style="display:none;">validez</button>
+                </div>
+            </div>
+            <div id="result-content" class="result-screen" style="display:none;">
+                <div class="result-card">
+                    <div id="result-message"></div>
+                    <div id="score-display"></div>
+                    <div id="responsibility-message" class="responsibility-text"></div>
+                    <button id="restart-btn" class="answer-btn" style="display:none;" onclick="restartQuiz()">Recommencer</button>
+                    <button id="nextlevel-btn" class="answer-btn" style="display:none;" onclick="nextLevel()">Niveau Suivant</button>
+                </div>
+            </div>
+        </div>
+        <div id="confetti-container"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/section2.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.screen {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.screen.active {
+    display: block;
+}
+
+.screen-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.level-box {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 10px;
+    background: rgba(255,255,255,0.3);
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: limegreen;
+    border-radius: 5px;
+}
+
+.option {
+    background: rgba(255,255,255,0.8);
+    color: black;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.option.selected {
+    background: lightgreen;
+}
+
+.message.success { color: lime; }
+.message.failure { color: red; }
+
+.timer {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+#gameCanvas {
+    background: rgba(255,255,255,0.8);
+    border: 2px solid #000;
+    border-radius: 8px;
+}

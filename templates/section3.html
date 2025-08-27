@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Quiz section3 </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/section3.css') }}">
+</head>
+<body>
+    <div id="app">
+        <!-- Écran de démarrage -->
+        <div id="start-screen" class="screen active">
+            <img src="{{ url_for('static', filename='images/interface1.jpg') }}" alt="Background Image" class="screen-image">
+            <div class="menu-btn" id="start-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu" id="start-menu"></div>
+            <div class="overlay">
+                <h1>Bienvenue dans le Triage des Déchets </h1>
+                <p>Testez vos connaissances sur le triage sélectif et la protection de l'environnement avec nos quiz.</p>
+                <p>Vous devrez obtenir au moins 3/5 pour passer au niveau suivant.</p>
+                <button id="start-btn">Commencer </button>
+            </div>
+            <div class="level-box">Niveau 1</div>
+        </div>
+        
+        <!-- Écran du quiz -->
+        <div id="quiz-screen" class="screen">
+            <img src="{{ url_for('static', filename='images/unnamed.jpg') }}" alt="Background Image" class="screen-image">
+            <span class="back-arrow" id="quiz-back">&#8592;</span>
+            <div class="level-box">Niveau 1</div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progress-bar-fill"></div>
+            </div>
+            <div class="question-container">
+                <div class="question-text" id="question-text">Question</div>
+                <div class="options-container" id="options-container"></div>
+            </div>
+        </div>
+        
+        <!-- Écran des résultats -->
+        <div id="result-screen" class="screen">
+            <img src="{{ url_for('static', filename='images/unnamed.jpg') }}" alt="Background Image" class="screen-image">
+            <span class="back-arrow" id="result-back">&#8592;</span>
+            <div class="overlay">
+                <h2>Résultats </h2>
+                <div class="score" id="final-score">0/5</div>
+                <div class="message" id="result-message">Message</div>
+                <button id="restart-btn">Recommencer</button>
+                <div class="next-level" id="next-level">Niveau 2</div>
+            </div>
+            <div class="level-box">Niveau 1</div>
+        </div>
+
+        <!-- Écran du niveau 2 -->
+        <div id="level2-screen" class="screen">
+            <div id="timekeeper" class="timer">Temps : 60s</div>
+            <img src="{{ url_for('static', filename='images/unnamed.jpg') }}" alt="Background Image" class="screen-image">
+            <span class="back-arrow" id="level2-back">&#8592;</span>
+            <div class="level-box">Niveau 2</div>
+            <div class="overlay">
+                <canvas id="gameCanvas" width="600" height="400"></canvas>
+                <p id="gameScore">Score : 0</p>
+                <button id="level2-back-btn">Retour</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/section3.js') }}"></script>
+</body>
+</html>

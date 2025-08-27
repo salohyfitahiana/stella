@@ -1,0 +1,109 @@
+
+    :root {
+      --dark-blue: #084b08;
+      --bg-light: #F2F8F3;
+      --text-dark: #0b2008;
+      --white: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+    body {
+      background: var(--bg-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* --------- NAVBAR TOP --------- */
+    .navbar-top {
+      background: var(--dark-blue);
+      color: var(--white);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+    .navbar-top .back {
+      font-size: 24px;
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+    .navbar-top .title {
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      flex: 1;
+    }
+    .navbar-top .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    /* --------- MAIN CONTENT --------- */
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .content p {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    .content img {
+      max-width: 260px;
+      border-radius: 16px;
+      margin-bottom: 25px;
+      width: 100%;
+    }
+
+    /* --------- BOUTON COMMENCER --------- */
+    .start-button {
+      background: var(--white);
+      color: var(--text-dark);
+      font-size: 16px;
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,.1);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+    .start-button:hover {
+      transform: scale(1.05);
+      background: #f1f1f1;
+    }
+
+    /* --------- NAVBAR BOTTOM --------- */
+    .navbar-bottom {
+      background: var(--dark-blue);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      color: var(--white);
+      font-size: 22px;
+    }
+    .navbar-bottom i {
+      cursor: pointer;
+    }
+
+    /* --------- RESPONSIVE --------- */
+    @media (max-width: 480px) {
+      .content p {
+        font-size: 16px;
+      }
+      .navbar-top .title {
+        font-size: 16px;
+      }
+    }

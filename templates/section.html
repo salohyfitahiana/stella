@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/section1.css') }}">
+</head>
+<body>
+
+  <!-- Flèche retour -->
+  <header class="header">
+    <button class="icon-btn" onclick="goBack()">←</button>
+  </header>
+
+  <main class="content">
+    <span class="level-badge" id="level-badge">Niveau 1</span><br><br>
+    <p class="question-line"><span id="question-number">1-</span><span id="question-text"></span></p>
+    <div class="options" id="options-container"></div>
+    <button class="validate" id="validate-button" onclick="validateAnswer()" disabled>Valider</button>
+
+    <section id="completion-message" class="completion">
+      <p id="final-message"></p>
+      <p id="final-score" class="final-score"></p>
+      <button class="restart" onclick="restartQuiz()">Recommencer</button>
+    </section>
+  </main>
+
+  <nav class="bottom">
+    <button class="icon-btn"></button>
+    <div class="bg-layer far-hills"></div>
+    <div class="bg-layer near-hills"></div>
+    <div class="bg-layer trees-village"></div>
+  </nav>
+
+  <!-- Résultat Overlay -->
+  <div class="result-overlay" id="resultOverlay">
+    <div class="result-header">
+      <button class="icon-btn" onclick="closeResult()">←</button>
+      <button class="icon-btn">
+        <span class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+
+    <div class="result-content">
+      <canvas id="confettiCanvas"></canvas>
+      <div class="result-card" id="resultCard">
+        <div class="result-emoji" id="resultEmoji">🎉</div>
+        <div class="result-text" id="resultText">Félicitation!</div>
+        <div class="result-score" id="resultScore">Score: 4/5</div>
+      </div>
+    </div>
+
+    <div class="result-actions">
+      <button class="result-btn" id="nextLevelBtn" onclick="startNextQuiz()" style="display:none;">
+        Passer au niveau SUIVANT
+      </button>
+
+      <button class="result-btn" onclick="restartQuizFromResult()">⟲</button>
+      <button class="result-btn" onclick="playAgainFromResult()">↻</button>
+    </div>
+  </div>
+  <!-- Script principal du quiz -->
+  <script src="{{ url_for('static', filename='js/section1.js') }}"></script>
+
+</body>
+</html>

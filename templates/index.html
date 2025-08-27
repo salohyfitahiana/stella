@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eco Game</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <!-- Écran 1 -->
+  <section id="screen1" class="screen">
+    <header>
+      <button id="backScreen1" class="back-btn">&lt;</button>
+      <button id="menuBtn1" class="menu-btn">☰</button>
+    </header>
+    <main>
+      <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Eco Game Logo" class="logo" />
+      <h2 class="slogan">Apprends, joue, sauve la planète !</h2>
+      <img src="{{ url_for('static', filename='images/m8.png') }}" alt="" class="mascotte" />
+      <div class="btn-group">
+        <button id="startBtn" class="btn white">Commencer</button>
+        <button id="loginBtn" class="btn green">Se connecter</button>
+      </div>
+    </main>
+    <footer>
+      <button>📷</button>
+      <button>☰</button>
+      <button>🏠</button>
+    </footer>
+  </section>
+
+  <!-- Écran 2 -->
+  <section id="screen2" class="screen">
+    <header>
+      <button id="backScreen2" class="back-btn">&lt;</button>
+      <button id="menuBtn2" class="menu-btn">☰</button>
+    </header>
+    <main>
+       <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Eco Game Logo" class="logo" />
+      <h2>Entré votre nom</h2>
+      <input type="text" id="userName" placeholder="Votre prénom" />
+      <button id="validateBtn" class="btn green">Valider</button>
+    </main>
+    <footer>
+      <button>📷</button>
+      <button>☰</button>
+      <button>🏠</button>
+    </footer>
+  </section>
+
+  <!-- Écran 3 -->
+  <section id="screen3" class="screen active">
+    <header>
+      <button id="backScreen3" class="back-btn">&lt;</button>
+    </header>
+    <main>
+      <h1>Par quel choix vais-je sauver le monde ?</h1>
+      <button class="btn blue" onclick="goToSection(1)">Tâches quotidiennes et consommation</button>
+      <button class="btn blue" onclick="goToSection(2)">Gestion de l'eau et protection de la nature</button>
+      <button class="btn blue" onclick="goToSection(3)">Triage de déchets</button>
+      <button id="returnBtn" class="btn green">Retour</button>
+    </main>
+    <footer>
+      <button>📷</button>
+      <button>☰</button>
+      <button>🏠</button>
+    </footer>
+  </section>
+
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>

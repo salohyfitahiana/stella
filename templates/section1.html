@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCM</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/section.css') }}">
+</head>
+<body>
+
+  <!-- NAVBAR TOP -->
+  <div class="navbar-top">
+    <span class="back"></span>
+    <span class="menu-toggle"></span>
+  </div>
+
+  <!-- CONTENU -->
+  <div class="content">
+    <p>Découvre comment tes gestes de tous les jours<br>
+    peuvent protéger la planète !</p>
+    
+    <img src="{{ url_for('static', filename='images/rectangle_10.jpg') }}" alt="Image illustration">
+
+    <!-- ✅ Lien vers le jeu dans section.html -->
+    <a href="{{ url_for('section_home') }}" class="start-button">Commencer QCM</a>
+
+  </div>
+
+  <!-- NAVBAR BOTTOM -->
+  <div class="navbar-bottom">
+  </div>
+</body>
+</html>

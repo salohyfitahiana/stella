@@ -1,0 +1,235 @@
+/* === GLOBAL === */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* désactive scroll */
+  font-size: 16px;
+}
+
+/* === ÉCRANS === */
+.screen {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.screen.active {
+  display: flex;
+  z-index: 10;
+}
+
+/* === ÉCRAN 1 (avec background image) === */
+#screen1 {
+  background-image: url('../images/fity.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+  z-index: 10;
+}
+
+#screen1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+#screen1 > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* === ÉCRAN 2 & 3 (sans background) === */
+#screen2,
+#screen3 {
+  background-color: transparent;
+  color: black;
+  z-index: 10;
+}
+
+/* === HEADER & FOOTER === */
+header,
+footer {
+  background-color: #001F35;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.menu-btn,
+.back-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* === MAIN: contenu centré === */
+main {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* === LOGO & SLOGAN === */
+.logo {
+  width: 120px;
+  margin: 20px auto 10px;
+}
+
+.logo.small {
+  width: 100px;
+}
+
+.slogan {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* === MASCOTTE (taille + animation bounce + wiggle) === */
+.mascotte {
+  width: 220px;
+  margin: 20px 0;
+  animation: bounce 2s infinite ease-in-out, wiggle 4s infinite ease-in-out;
+  transform-origin: center bottom;
+}
+
+/* === ANIMATION bounce === */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* === ANIMATION wiggle (ngézangéza) === */
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+
+/* === BOUTONS === */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-sizing: border-box;
+  max-width: 300px;
+  width: 80%;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.white {
+  background-color: white;
+  color: black;
+}
+
+.green {
+  background-color: #A5CD39;
+  color: white;
+}
+
+.blue {
+  background-color: #2F6FD6;
+  color: white;
+}
+
+/* === INPUT TEXT === */
+input[type="text"] {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  width: 200px;
+  margin-bottom: 10px;
+  text-align: center;
+  max-width: 90vw;
+  box-sizing: border-box;
+}
+
+/* === RESPONSIVE MEDIA QUERIES === */
+@media screen and (max-width: 900px) {
+  .mascotte {
+    width: 180px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .btn {
+    width: 90%;
+    max-width: none;
+  }
+  
+  input[type="text"] {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .mascotte {
+    width: 150px;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  .btn {
+    width: 95%;
+    font-size: 14px;
+    margin: 8px 0;
+  }
+
+  main {
+    padding: 10px;
+  }
+}
